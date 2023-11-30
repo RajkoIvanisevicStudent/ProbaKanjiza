@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    color: black;
+    scroll-behavior: smooth;
+}
+
+:root {
+
+    --gray-0: #f8f8f8;
+    --gray-1: #f2f2f2;
+    --gray-2: #e6e6e6;
+    --gray-3: #d9d9d9;
+    --gray-4: #bfbfbf;
+    --gray-5: #a6a6a6;
+    --gray-6: #808080;
+    --gray-7: #595959;
+    --gray-8: #4e4e4e;
+    --action-accent: var(--cds-link-01);
+}
+
+#roditelj {
+    height: 500px;
+    width: 500px;
+    overflow: auto;
+    resize: both;
+}
+
+.Pozadina {
+    background-color: yellow;
+}
+
+.tabulator-editing input {
+    /* pointer-events: none!important; */
+    /* font-size: 30px!important; */
+    caret-color: transparent;
+}
+
+/* .tabulator-editing {
+    font-size: 40px;
+}
+
+.tabulator-editable {
+    font-size: 40px;
+} */

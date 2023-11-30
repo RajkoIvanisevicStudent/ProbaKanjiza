@@ -1,0 +1,120 @@
+.CollapsibleTable {
+    white-space: nowrap;
+    margin: 0;
+    border: none;
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+    border: 1px solid gray;
+}
+
+table td,
+table th {
+    border: 1px solid gray;
+}
+
+thead th {
+    padding: 3px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: var(--ctbl-header-background);
+    font-weight: normal;
+    color: var(--ctbl-header-text-color);
+    padding: 5px 15px;
+}
+
+
+table td {
+    background: #fff;
+    padding: 4px 5px;
+    text-align: center;
+}
+
+table tbody tr th {
+    background-color: var(--ctbl-first-column-background);
+    padding-right: 15px;
+}
+
+table tbody th {
+    text-align: left;
+}
+
+table thead th:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+}
+
+table tbody th {
+    position: sticky;
+    left: 0;
+    background: white;
+    font-weight: normal;
+    z-index: 1;
+}
+
+
+
+tr.Expandable th {
+    transition: all .2s;
+}
+
+tr.Expandable th::before,
+tr.Expandable.Expanded th::before {
+    display: inline-block;
+    margin: 0 5px 0 0;
+    font-size: 14px;
+    transition: all .2s;
+    content: "\25bc";
+}
+
+tr.Expandable th::before {
+    color: var(--secondary-color);
+}
+
+tr.Expandable.Expanded th::before {
+    color: var(--primary-color);
+    transform: rotate(180deg);
+}
+
+
+/* Primenom ovog stila vrši se kolapsiranje redova */
+.CollapsedAncestor {
+    display: none;
+}
+
+.Uvuci {
+    padding-left: 30px;
+}
+
+.CollapsibleTable input[type="number"],
+.CollapsibleTable input[type="number"]:focus {
+    color: red;
+    border: none;
+    outline: none !important;
+    text-align: right;
+    box-shadow: none;
+}
+
+
+/* Hide the number input's arrow buttons
+.CollapsibleTable input[type="number"]::-webkit-outer-spin-button,
+.CollapsibleTable input[type="number"]::-webkit-inner-spin-button,
+.CollapsibleTable input[type="number"]::-moz-outer-spin-button,
+.CollapsibleTable input[type="number"]::-moz-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin: 0;
+} */
+
+.CollapsibleTable input::-webkit-outer-spin-button,
+.CollapsibleTable input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Hide the number input's arrow buttons (for Firefox) */
+.CollapsibleTable input[type="number"] {
+    -moz-appearance: textfield;
+}

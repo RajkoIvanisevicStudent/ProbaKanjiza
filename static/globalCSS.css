@@ -1,0 +1,287 @@
+:root {
+	--font-body: 'Open Sans', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+
+	--primary-color: #611240;
+	--primary-color-medium: #CC99CC;
+	--primary-color-light: #FFC9FF;
+	--primary-color-extra-light: #FFE0FF;
+	--secondary-color: #ED2E59;
+	--secondary-color-medium: #FFB5C6;
+
+	--gray-0: #f8f8f8;
+	--gray-1: #f2f2f2;
+	--gray-2: #e6e6e6;
+	--gray-3: #d9d9d9;
+	--gray-4: #bfbfbf;
+	--gray-5: #a6a6a6;
+	--gray-6: #808080;
+	--gray-7: #595959;
+	--gray-8: #4e4e4e;
+
+	--blue-1: #EDF4FF;
+	--blue-2: #D0E2FE;
+	--blue-3: #A6C9FF;
+	--blue-4: #77A9FF;
+	--blue-5: #4689FF;
+	--blue-6: #0E62FE;
+	--blue-7: #0143CE;
+	--blue-8: #002D9D;
+	--blue-9: #001C6C;
+	--blue-10: #001142;
+
+	--green-1: #3CBB60;
+	--green-2: #198038;
+
+	--orange: #ffa500;
+	--deep-yellow: #FFCC00;
+
+	--purple-1: #e8daff;
+	--purple-2: #d4bbff;
+	--purple-3: #ba8eff;
+	--purple-4: #aa70ff;
+	--purple-5: #893efb;
+	--purple-6: #6e31ca;
+	--purple-7: #512197;
+	--purple-8: #38146b;
+	--purple-9: #1f0f33;
+	--purple-10: #1e1033;
+
+	
+	--green-1: #9DEEB3;
+	--green-2: #56D679;
+	--green-3: #3CBB60;
+	--green-4: #24A24A;
+	--green-5: #1A7F39;
+	--green-6: #11652A;
+	--green-7: #054719;
+	--green-8: #02340F;
+	--green-9: #081B08;
+	--green-10: #081B08;
+
+
+	--everyCell: var(--green-1);
+	--someCells: var(--orange);
+	--noCell: var(--purple-7);
+
+	--action-accent: var(--cds-link-01);
+
+	--customerColor: #FEA5AB;
+	--regionColor: #CC99CC;
+
+	--IconCardIconWidth: 50px;
+
+}
+
+
+/* Koristi se u components/general/ModalSaveChanges.svelte */
+.AnswersWithCancel .bx--btn.bx--btn--secondary:not(:first-of-type) {
+	background-color: #da1e28 !important;
+	transition: background-color 0.3s !important;
+}
+
+.AnswersWithCancel .bx--btn.bx--btn--secondary:not(:first-of-type):hover {
+	background-color: #B81921 !important;
+}
+
+/* .............................................. */
+
+/* Ribbon na modalnim prozorima korisnika plana i podrazumevanih proizvoda / liste proizvoda */
+#MatrixRibbonContainer button svg,
+#DefaultProductsRibbonContainer button svg,
+#ProductListToolBar button svg {
+	/* width: 20px !important;
+	height: 20px !important; */
+	width: 20px !important;
+	height: 20px !important;
+}
+
+#MatrixRibbonContainer button,
+#DefaultProductsRibbonContainer button,
+#ProductListToolBar button {
+	/* padding: 5px 13px !important; */
+	padding: 0px 15px !important;
+}
+
+#MatrixRibbonContainer button.bx--btn--sm,
+#DefaultProductsRibbonContainer button.bx--btn--sm,
+#ProductListToolBar button.bx--btn--sm {
+	/* padding: 5px 13px !important; */
+	padding: 0px 6px !important;
+}
+
+#MatrixRibbonContainer button.bx--btn--sm svg,
+#DefaultProductsRibbonContainer button.bx--btn--sm svg,
+#ProductListToolBar button.bx--btn--sm svg {	
+	width: 17px !important;
+	height: 17px !important;
+}
+
+/* .............................................. */
+
+/* Icona Carbon Search komponente kod PlannerList i ProductListWindow */
+.SearchContainerXLBlueIcon .bx--search-magnifier svg {
+	width: 22px !important;
+	height: 22px !important;
+	fill: var(--action-accent) !important;
+}
+
+
+.CloseIcon:hover svg {
+	fill: white !important;
+}
+
+/* ------------------------------------------------- */
+/*             ProductList.svelte            */
+/* ------------------------------------------------- */
+
+/* Koristi se u ProductList.svelte
+Razlog: klasa Indeterminate se ne koristi kada se izvršava onMount,
+a korišćenje :global() nije dalo rezultata */
+#DefaultProductsListContainer input[type='checkbox'].Indeterminate+label::before {
+	content: '';
+	position: relative;
+	top: 0;
+	width: 20px;
+	height: 20px;
+	margin-right: 7px;
+	background-size: 15px 15px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	flex-shrink: 0;
+	background-image: url('../src/lib/img/indeterminate.svg');
+}
+
+#DefaultProductsListContainer input[type='checkbox'].SomeCellsVisual+label::before {
+	content: '';
+	position: relative;
+	top: 0;
+	width: 20px;
+	height: 20px;
+	margin-right: 7px;
+	background-size: 15px 15px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	flex-shrink: 0;
+	background-image: url('../src/lib/img/inconsistent.svg');
+}
+
+
+#DefaultProductsListContainer .EveryCell~label {
+	color: var(--everyCell);
+}
+
+#DefaultProductsListContainer .SomeCells~label {
+	color: var(--someCells);
+}
+
+#DefaultProductsListContainer .NoCell~label {
+	color: var(--noCell);
+}
+
+#DefaultProductsListContainer .HiddenCategory {
+	display: none !important;
+}
+
+/* Kraj ProductList.svelte stilova */
+/* ................................................ */
+
+.NoPaddingModal div.bx--modal-header+div {
+	padding: 0;
+	margin: 0;
+}
+
+
+/* Modalni prozor za distribuciju planskih vrednosti/komada */
+#ValueDistributionContainer input {
+	/* background-color: var(--gray-1); */
+	font-size: 20px;
+	font-family: 'Open Sans', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+	;
+	margin-top: 6px;
+	font-weight: 600;
+}
+
+
+/* Da bi se u modalnom prozoru za unos početnog i krajnjeg datuma
+prikazivao padajući kalendar komponente DatePicker,
+potrebno je prikazati overflow modalnog prozora. 
+Bez ovoga, bilo bi neophodno da modalni prozor ima donji padding od oko 350px */
+
+
+#NewPlanModalContainer .bx--modal-container {
+	overflow: unset !important;
+}
+
+#NewPlanModalContainer .bx--modal-content {
+	overflow-y: unset !important;
+}
+
+
+/* Ukoliko se komponenta NumberInput prikazuje u modalnom prozoru, greškom Carbon UI (?!), ostaju sive linije ispred i iza ikona + i -,
+za inkrement/dekrement vrednosti u komponenti. Na ovaj način se taj nedostatak otklanja.  */
+
+.bx--modal-content button.bx--number__control-btn.down-icon::before,
+.bx--modal-content button.bx--number__control-btn.up-icon::before,
+.bx--modal-content button.bx--number__control-btn.down-icon::after,
+.bx--modal-content button.bx--number__control-btn.up-icon::after {
+	background-color: transparent !important;
+}
+
+/* ------------------------------------------------- */
+/*     Podešavanje Carbon Breadcrumbs komponente     */
+/* ------------------------------------------------- */
+
+/* Breadcrumbs boja poslednje stavke, koja nije link */
+.bx--breadcrumb-item.bx--breadcrumb-item--current {
+	color: var(--gray-5);
+}
+
+/* Breadcrumbs veličina fonta */
+.bx--breadcrumb,
+.bx--breadcrumb .bx--link {
+	font-size: 12px !important;
+}
+
+/* Za formatiranje ćelija tabele u komponenti CustomerMarketCoverageTable,
+ćelije se kreiraju u funkciji cellContextMenuItems
+*/
+
+.CustomerMarketCoverageCellContextMenuItem {
+	display: flex;
+}
+
+.CustomerMarketCoverageCellContextMenuItem span:first-of-type {
+	/* color: var(--action-accent) !important; */
+	margin-left: 0 !important;
+}
+
+
+/* Za selektovane ćelije u tabeli u komponenti CustomerMarketCoverageTable */
+
+.MVP-SelectedCell,
+.col-selected {
+	/* background-color: red !important; */
+	background-color: var(--gray-2);
+}
+
+/* Da se markira ćelija na koju je izvršen desni klik */
+.MVP-ContextMenuCellIndicator {
+	border: 1px dashed black !important;
+}
+
+
+
+/* Za funkciju filtriranja proizvoda u listi proizvoda na osnovu teksta unetog u Carbon Search komponentu */
+
+.MVP-ProductListNodeHidden {
+	display: none !important;
+	visibility: hidden !important;
+}
+
+.MVP-ProductListNodeVisible {
+	display: block !important;
+	visibility: visible !important;
+}
+
+/* .......................................... */
+
